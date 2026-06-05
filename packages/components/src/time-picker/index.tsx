@@ -31,11 +31,11 @@ const mapTimeFormat = function () {
   }
 }
 
-const InternalTimePicker: ComposedTimePicker = connect(
+const InternalTimePicker = connect(
   AntdTimePicker,
   mapProps(mapTimeFormat()),
   mapReadPretty(PreviewText.TimePicker)
-)
+) as unknown as ComposedTimePicker
 
 const RangePicker = connect(
   AntdTimePicker.RangePicker,

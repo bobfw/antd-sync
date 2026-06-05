@@ -7,7 +7,7 @@
 import { ReactFC } from '@formily/react'
 import { Space } from 'antd'
 import { SpaceProps } from 'antd/lib/space'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import StickyBox from 'react-sticky-box'
 import { BaseItem, IFormItemProps } from '../form-item'
@@ -68,7 +68,7 @@ export const FormButtonGroup: ComposedButtonGroup = ({
     <Space
       {...props}
       size={gutter}
-      className={cls(prefixCls, props.className)}
+      className={clsx(prefixCls, props.className)}
       style={{
         ...props.style,
         justifyContent:
@@ -124,7 +124,7 @@ FormButtonGroup.Sticky = ({ align = 'left', ...props }) => {
   return wrapSSR(
     <StickyBox
       {...props}
-      className={cls(`${prefixCls}-sticky`, hashId, props.className)}
+      className={clsx(`${prefixCls}-sticky`, hashId, props.className)}
       style={{
         backgroundColor: color,
         ...props.style,

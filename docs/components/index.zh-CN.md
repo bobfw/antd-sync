@@ -61,7 +61,7 @@
 
 ```bash
 npm install --save antd dayjs
-npm install --save @formily/core @formily/react @formily/antd-v5
+npm install --save @formily/core @formily/react @formily/antd-sync
 
 ```
 

@@ -1,4 +1,4 @@
-import { FormButtonGroup, FormItem, Select, Submit } from '@formily/antd-v5'
+import { FormButtonGroup, FormItem, Select, Submit } from '@formily/antd-sync'
 import {
   createForm,
   Field,

@@ -163,6 +163,6 @@ export default defineConfig({
     `,
   ],
   alias: {
-    '@formily/antd-v5': path.join(__dirname, 'packages/components/src'),
+    'formily-antd-sync': path.join(__dirname, 'packages/components/src'),
   },
 })

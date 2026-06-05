@@ -8,7 +8,7 @@ import {
   useFieldSchema,
 } from '@formily/react'
 import { Card, CardProps, Empty } from 'antd'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React from 'react'
 import { ArrayBase } from '../array-base'
 import { usePrefixCls } from '../__builtins__'
@@ -114,7 +114,7 @@ export const InternalArrayCards: ReactFC<CardProps> = observer((props) => {
           <Card
             {...props}
             onChange={() => {}}
-            className={cls(`${prefixCls}-item`, hashId, props.className)}
+            className={clsx(`${prefixCls}-item`, hashId, props.className)}
             title={title}
             extra={extra}
           >
@@ -140,7 +140,7 @@ export const InternalArrayCards: ReactFC<CardProps> = observer((props) => {
       <Card
         {...props}
         onChange={() => {}}
-        className={cls(`${prefixCls}-item`, hashId, props.className)}
+        className={clsx(`${prefixCls}-item`, hashId, props.className)}
         title={props.title || field.title}
       >
         <Empty />

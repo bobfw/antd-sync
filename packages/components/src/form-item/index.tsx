@@ -6,7 +6,7 @@ import {
 import { isVoidField } from '@formily/core'
 import { connect, mapProps, ReactFC } from '@formily/react'
 import { Popover, Tooltip } from 'antd'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { useState } from 'react'
 import { FormLayoutShallowContext } from '../form-layout'
 import { pickDataProps, usePrefixCls } from '../__builtins__'
@@ -98,7 +98,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
         placement="top"
         content={
           <div
-            className={cls({
+            className={clsx({
               [`${prefixCls}-${feedbackStatus}-help`]: !!feedbackStatus,
               [`${prefixCls}-help`]: true,
             })}
@@ -165,7 +165,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
     if (!label) return null
     return (
       <div
-        className={cls({
+        className={clsx({
           [`${prefixCls}-label`]: true,
           [`${prefixCls}-label-tooltip`]:
             (tooltip && tooltipLayout === 'text') || overflow,
@@ -190,7 +190,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
         ...gridStyles,
       }}
       data-grid-span={props.gridSpan}
-      className={cls(
+      className={clsx(
         props.className,
         {
           [`${prefixCls}`]: true,
@@ -225,21 +225,21 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
     >
       {renderLabel()}
       <div
-        className={cls({
+        className={clsx({
           [`${prefixCls}-control`]: true,
           [`${prefixCls}-item-col-${wrapperCol}`]:
             enableCol && !!wrapperCol && label,
         })}
       >
-        <div className={cls(`${prefixCls}-control-content`)}>
+        <div className={clsx(`${prefixCls}-control-content`)}>
           {addonBefore && (
-            <div className={cls(`${prefixCls}-addon-before`)}>
+            <div className={clsx(`${prefixCls}-addon-before`)}>
               {addonBefore}
             </div>
           )}
           <div
             style={wrapperStyle}
-            className={cls({
+            className={clsx({
               [`${prefixCls}-control-content-component`]: true,
               [`${prefixCls}-control-content-component-has-feedback-icon`]:
                 !!feedbackIcon,
@@ -249,20 +249,20 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
               {formatChildren}
             </FormLayoutShallowContext.Provider>
             {feedbackIcon && (
-              <div className={cls(`${prefixCls}-feedback-icon`)}>
+              <div className={clsx(`${prefixCls}-feedback-icon`)}>
                 {feedbackIcon}
               </div>
             )}
           </div>
           {addonAfter && (
-            <div className={cls(`${prefixCls}-addon-after`)}>{addonAfter}</div>
+            <div className={clsx(`${prefixCls}-addon-after`)}>{addonAfter}</div>
           )}
         </div>
         {!!feedbackText &&
           feedbackLayout !== 'popover' &&
           feedbackLayout !== 'none' && (
             <div
-              className={cls({
+              className={clsx({
                 [`${prefixCls}-${feedbackStatus}-help`]: !!feedbackStatus,
                 [`${prefixCls}-help`]: true,
                 [`${prefixCls}-help-enter`]: true,
@@ -272,7 +272,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
               {feedbackText}
             </div>
           )}
-        {extra && <div className={cls(`${prefixCls}-extra`)}>{extra}</div>}
+        {extra && <div className={clsx(`${prefixCls}-extra`)}>{extra}</div>}
       </div>
     </div>
   )

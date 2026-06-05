@@ -1,4 +1,9 @@
-import { FormButtonGroup, FormItem, Submit, TimePicker } from '@formily/antd-v5'
+import {
+  FormButtonGroup,
+  FormItem,
+  Submit,
+  TimePicker,
+} from '@formily/antd-sync'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider, ISchema } from '@formily/react'
 import React from 'react'

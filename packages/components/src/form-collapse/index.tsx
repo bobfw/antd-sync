@@ -9,7 +9,7 @@ import {
 import { markRaw, model } from '@formily/reactive'
 import { toArr } from '@formily/shared'
 import { Badge, Collapse, CollapsePanelProps, CollapseProps } from 'antd'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { Fragment, useMemo } from 'react'
 import { usePrefixCls } from '../__builtins__'
 
@@ -128,7 +128,7 @@ const InternalFormCollapse: ReactFC<IFormCollapseProps> = observer(
     return (
       <Collapse
         {...props}
-        className={cls(prefixCls, props.className)}
+        className={clsx(prefixCls, props.className)}
         activeKey={takeActiveKeys()}
         onChange={(key) => {
           props?.onChange?.(key)

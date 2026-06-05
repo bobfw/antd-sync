@@ -1,7 +1,7 @@
+import clsx from 'clsx'
 import React, { createContext, useContext } from 'react'
-import { useResponsiveFormLayout } from './useResponsiveFormLayout'
 import { usePrefixCls } from '../__builtins__'
-import cls from 'classnames'
+import { useResponsiveFormLayout } from './useResponsiveFormLayout'
 
 export interface IFormLayoutProps {
   prefixCls?: string
@@ -77,7 +77,7 @@ export const FormLayout: React.FC<React.PropsWithChildren<IFormLayoutProps>> & {
   const deepLayout = useFormDeepLayout()
   const formPrefixCls = usePrefixCls('form', { prefixCls })
   const layoutPrefixCls = usePrefixCls('formily-layout', { prefixCls })
-  const layoutClassName = cls(
+  const layoutClassName = clsx(
     layoutPrefixCls,
     {
       [`${formPrefixCls}-${props.layout}`]: true,

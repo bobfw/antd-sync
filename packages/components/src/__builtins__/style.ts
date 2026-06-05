@@ -58,7 +58,7 @@ export const genCommonStyle = (
   }
 }
 export type UseComponentStyleResult = [
-  (node: React.ReactNode) => React.ReactElement,
+  (node: React.ReactElement) => React.ReactElement,
   string
 ]
 
@@ -73,35 +73,34 @@ export const genStyleHook = <ComponentName extends OverrideComponent>(
     const { theme, token, hashId } = useToken()
     const { getPrefixCls, iconPrefixCls, csp } = useConfig()
     const rootPrefixCls = getPrefixCls()
-    return [
-      useStyleRegister(
-        {
-          nonce: csp?.nonce,
-          theme,
-          token,
-          hashId,
-          path: ['formily-antd', component, prefixCls, iconPrefixCls],
-        },
-        () => {
-          const componentCls = `.${prefixCls}`
-          const mergedToken: TokenWithCommonCls<GlobalToken> = merge(token, {
-            ...token['Form'], // Merge the antd form token
-            componentCls,
-            prefixCls,
-            iconCls: `.${iconPrefixCls}`,
-            antCls: `.${rootPrefixCls}`,
-          })
+    useStyleRegister(
+      {
+        nonce: csp?.nonce,
+        theme: theme as any,
+        token,
+        hashId,
+        path: ['formily-antd', component, prefixCls, iconPrefixCls],
+      },
+      () => {
+        const componentCls = `.${prefixCls}`
+        const mergedToken: TokenWithCommonCls<GlobalToken> = merge(token, {
+          ...token['Form'], // Merge the antd form token
+          componentCls,
+          prefixCls,
+          iconCls: `.${iconPrefixCls}`,
+          antCls: `.${rootPrefixCls}`,
+        })
 
-          const styleInterpolation = styleFn(mergedToken, {
-            hashId,
-            prefixCls,
-            rootPrefixCls,
-            iconPrefixCls,
-          })
-          return [genCommonStyle(token, prefixCls), styleInterpolation]
-        }
-      ),
-      hashId,
-    ]
+        const styleInterpolation = styleFn(mergedToken, {
+          hashId,
+          prefixCls,
+          rootPrefixCls,
+          iconPrefixCls,
+        })
+        return [genCommonStyle(token, prefixCls), styleInterpolation]
+      }
+    )
+    const wrapSSR = (node: React.ReactElement): React.ReactElement => node
+    return [wrapSSR, hashId]
   }
 }

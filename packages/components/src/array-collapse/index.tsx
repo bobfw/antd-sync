@@ -16,7 +16,7 @@ import {
   CollapseProps,
   Empty,
 } from 'antd'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { Fragment, useEffect, useState } from 'react'
 import ArrayBase from '../array-base'
 import { usePrefixCls } from '../__builtins__'
@@ -108,7 +108,7 @@ const InternalArrayCollapse: ReactFC<IArrayCollapseProps> = observer(
     const renderEmpty = () => {
       if (dataSource.length) return
       return (
-        <Card className={cls(`${prefixCls}-item`, hashId, props.className)}>
+        <Card className={clsx(`${prefixCls}-item`, hashId, props.className)}>
           <Empty />
         </Card>
       )
@@ -122,7 +122,7 @@ const InternalArrayCollapse: ReactFC<IArrayCollapseProps> = observer(
           onChange={(keys: string[]) => {
             setActiveKeys(toArr(keys).map(Number))
           }}
-          className={cls(`${prefixCls}-item`, hashId, props.className)}
+          className={clsx(`${prefixCls}-item`, hashId, props.className)}
         >
           {dataSource.map((item, index) => {
             const items = Array.isArray(schema.items)

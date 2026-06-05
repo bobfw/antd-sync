@@ -6,7 +6,12 @@
 
 ```tsx
 import React from 'react'
-import { TreeSelect, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import {
+  TreeSelect,
+  FormItem,
+  FormButtonGroup,
+  Submit,
+} from '@formily/antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 
@@ -95,7 +100,7 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '@formily/antd-sync'
 import { createForm, onFieldReact, FormPathPattern, Field } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { action } from '@formily/reactive'
@@ -268,7 +273,12 @@ export default () => (
 
 ```tsx
 import React from 'react'
-import { TreeSelect, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import {
+  TreeSelect,
+  FormItem,
+  FormButtonGroup,
+  Submit,
+} from '@formily/antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 
@@ -362,7 +372,7 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '@formily/antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { action } from '@formily/reactive'
@@ -534,7 +544,12 @@ export default () => (
 
 ```tsx
 import React from 'react'
-import { TreeSelect, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import {
+  TreeSelect,
+  FormItem,
+  FormButtonGroup,
+  Submit,
+} from '@formily/antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, Field } from '@formily/react'
 
@@ -609,7 +624,7 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '@formily/antd-sync'
 import {
   createForm,
   onFieldReact,

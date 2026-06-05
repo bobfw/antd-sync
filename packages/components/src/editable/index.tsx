@@ -3,7 +3,7 @@ import { Field, isVoidField } from '@formily/core'
 import { observer, ReactFC, useField } from '@formily/react'
 import { Popover as AntdPopover } from 'antd'
 import { PopoverProps } from 'antd/lib/popover'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { BaseItem, IFormItemProps } from '../form-item'
 import { useClickAway, usePrefixCls } from '../__builtins__'
@@ -114,7 +114,7 @@ const InternalEditable: ReactFC<IFormItemProps> = observer((props) => {
   ref.current = editable
 
   return wrapSSR(
-    <div className={cls(prefixCls, hashId)} ref={innerRef} onClick={onClick}>
+    <div className={clsx(prefixCls, hashId)} ref={innerRef} onClick={onClick}>
       <div className={`${prefixCls}-content`}>
         <BaseItem {...props} {...itemProps}>
           {props.children}
@@ -152,7 +152,7 @@ const Popover = observer((props: PopoverProps) => {
       {...props}
       title={props.title || field.title}
       open={open}
-      className={cls(prefixCls, hashId, props.className)}
+      className={clsx(prefixCls, hashId, props.className)}
       content={props.children}
       trigger="click"
       destroyTooltipOnHide

@@ -9,10 +9,12 @@ import {
 } from '@formily/react'
 import { action, define, markRaw, model, observable } from '@formily/reactive'
 import { Steps } from 'antd'
-import { StepProps, StepsProps } from 'antd/lib/steps'
-import cls from 'classnames'
+import type { StepsProps } from 'antd/es/steps'
+import clsx from 'clsx'
 import React, { Fragment } from 'react'
 import { usePrefixCls } from '../__builtins__'
+
+type StepItem = NonNullable<StepsProps['items']>[number]
 
 export interface IFormStep {
   connect: (steps: SchemaStep[], field: VoidField) => void
@@ -30,7 +32,7 @@ export interface IFormStepProps extends StepsProps {
 }
 
 type ComposedFormStep = React.FC<React.PropsWithChildren<IFormStepProps>> & {
-  StepPane: React.FC<React.PropsWithChildren<StepProps>>
+  StepPane: React.FC<React.PropsWithChildren<StepItem>>
   createFormStep: (defaultCurrent?: number) => IFormStep
 }
 
@@ -143,16 +145,13 @@ export const FormStep = connect(
     const current = props.current || formStep?.current || 0
     formStep?.connect?.(steps, field)
     return (
-      <div className={cls(prefixCls, className)}>
+      <div className={clsx(prefixCls, className)}>
         <Steps
           {...props}
           style={{ marginBottom: 10, ...props.style }}
           current={current}
-        >
-          {steps.map(({ props }, key) => {
-            return <Steps.Step {...props} key={key} />
-          })}
-        </Steps>
+          items={steps.map(({ props }, key) => ({ ...props, key }))}
+        />
         {steps.map(({ name, schema }, key) => {
           if (key !== current) return
           return <RecursionField key={key} name={name} schema={schema} />
@@ -162,7 +161,7 @@ export const FormStep = connect(
   })
 ) as unknown as ComposedFormStep
 
-const StepPane: React.FC<React.PropsWithChildren<StepProps>> = ({
+const StepPane: React.FC<React.PropsWithChildren<StepItem>> = ({
   children,
 }) => {
   return <Fragment>{children}</Fragment>

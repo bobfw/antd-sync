@@ -1,14 +1,14 @@
-import React from 'react'
-import { Cascader, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Cascader, FormButtonGroup, FormItem, Submit } from '@formily/antd-sync'
 import {
   createForm,
-  onFieldReact,
-  FormPathPattern,
-  FieldDataSource,
   Field as FieldType,
+  FieldDataSource,
+  FormPathPattern,
+  onFieldReact,
 } from '@formily/core'
-import { FormProvider, Field } from '@formily/react'
+import { Field, FormProvider } from '@formily/react'
 import { action } from '@formily/reactive'
+import React from 'react'
 
 interface AddressInfo {
   code: string

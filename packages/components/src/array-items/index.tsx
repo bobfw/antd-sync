@@ -7,7 +7,7 @@ import {
   useField,
   useFieldSchema,
 } from '@formily/react'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React from 'react'
 import { ArrayBase } from '../array-base'
 import {
@@ -24,7 +24,7 @@ const SortableItem = SortableElement((props) => {
   return wrapSSR(
     <div
       {...props}
-      className={cls(`${prefixCls}-item`, hashId, props.className)}
+      className={clsx(`${prefixCls}-item`, hashId, props.className)}
     >
       {props.children}
     </div>
@@ -37,7 +37,7 @@ const SortableList = SortableContainer((props) => {
   return wrapSSR(
     <div
       {...props}
-      className={cls(`${prefixCls}-list`, hashId, props.className)}
+      className={clsx(`${prefixCls}-list`, hashId, props.className)}
     >
       {props.children}
     </div>
@@ -72,7 +72,7 @@ const InternalArrayItems: ReactFC<React.HTMLAttributes<HTMLDivElement>> =
         <div
           {...props}
           onChange={() => {}}
-          className={cls(prefixCls, hashId, props.className)}
+          className={clsx(prefixCls, hashId, props.className)}
         >
           <SortableList
             list={dataSource.slice()}
@@ -124,7 +124,7 @@ const Item: ReactFC<
     <div
       {...props}
       onChange={() => {}}
-      className={cls(
+      className={clsx(
         `${prefixCls}-${props.type || 'card'}`,
         hashId,
         props.className

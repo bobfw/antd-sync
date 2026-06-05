@@ -19,12 +19,11 @@ import {
   TableProps,
 } from 'antd'
 import { ColumnProps, ColumnsType } from 'antd/es/table'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, {
   createContext,
   forwardRef,
   Fragment,
-  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -235,7 +234,7 @@ const StatusSelect: ReactFC<IStatusSelectProps> = observer(
         style={{
           width: width < 60 ? 60 : width,
         }}
-        className={cls(`${prefixCls}-status-select`, hashId, {
+        className={clsx(`${prefixCls}-status-select`, hashId, {
           'has-error': errors?.length,
         })}
       />
@@ -295,7 +294,7 @@ const ArrayTablePagination: ReactFC<IArrayTablePaginationProps> = (props) => {
   const renderPagination = () => {
     if (!showPagination || totalPage < 1) return
     return (
-      <div className={cls(`${prefixCls}-pagination`, hashId)}>
+      <div className={clsx(`${prefixCls}-pagination`, hashId)}>
         <Space>
           <StatusSelect
             value={current}
@@ -375,7 +374,7 @@ const WrapperComp = (props: React.HTMLAttributes<HTMLTableSectionElement>) => {
       onSortEnd={({ oldIndex, newIndex }) => {
         field.move(oldIndex, newIndex)
       }}
-      className={cls(`${prefixCls}-sort-helper`, props.className)}
+      className={clsx(`${prefixCls}-sort-helper`, props.className)}
     />
   )
 }
@@ -388,7 +387,7 @@ const RowComp: ReactFC<React.HTMLAttributes<HTMLTableRowElement>> = (props) => {
       lockAxis="y"
       {...props}
       index={index}
-      className={cls(props.className, `${prefixCls}-row-${index + 1}`)}
+      className={clsx(props.className, `${prefixCls}-row-${index + 1}`)}
     />
   )
 }
@@ -420,7 +419,7 @@ const InternalArrayTable: ReactFC<TableProps<any>> = observer(
       >
         {(dataSource, pager, { startIndex }) => {
           return (
-            <div ref={ref} className={cls(prefixCls, hashId)}>
+            <div ref={ref} className={clsx(prefixCls, hashId)}>
               <ArrayBase>
                 <Table
                   size="small"

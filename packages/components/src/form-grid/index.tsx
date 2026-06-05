@@ -1,7 +1,7 @@
 import { Grid, IGridOptions } from '@formily/grid'
 import { observer } from '@formily/react'
 import { markRaw } from '@formily/reactive'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { useContext, useLayoutEffect, useMemo, useRef } from 'react'
 import { useFormLayout } from '../form-layout'
 import { pickDataProps, usePrefixCls } from '../__builtins__'
@@ -61,7 +61,7 @@ const InternalFormGrid = observer(
         {wrapSSR(
           <div
             {...dataProps}
-            className={cls(`${prefixCls}-layout`, hashId, className)}
+            className={clsx(`${prefixCls}-layout`, hashId, className)}
             style={{
               ...style,
               gridTemplateColumns: grid.templateColumns,

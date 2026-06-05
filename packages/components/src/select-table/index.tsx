@@ -12,7 +12,7 @@ import { Input, Table } from 'antd'
 import { ColumnsType } from 'antd/es/table'
 import { SearchProps } from 'antd/lib/input'
 import { ColumnProps, TableProps } from 'antd/lib/table'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { useMemo, useState } from 'react'
 import { usePrefixCls } from '../__builtins__'
 import {
@@ -325,11 +325,11 @@ const InternalSelectTable: ReactFC<ISelectTableProps> = observer((props) => {
   ]
 
   return wrapSSR(
-    <div className={cls(prefixCls, hashId)}>
+    <div className={clsx(prefixCls, hashId)}>
       {showSearch ? (
         <Search
           {...searchProps}
-          className={cls(`${prefixCls}-search`, searchProps?.className)}
+          className={clsx(`${prefixCls}-search`, searchProps?.className)}
           style={{ width: '100%', ...searchProps?.style }}
           onSearch={onInnerSearch}
           onChange={(e) => onInnerSearch(e.target.value)}
@@ -341,7 +341,7 @@ const InternalSelectTable: ReactFC<ISelectTableProps> = observer((props) => {
       ) : null}
       <Table
         {...otherTableProps}
-        className={cls(`${prefixCls}-table`, className)}
+        className={clsx(`${prefixCls}-table`, className)}
         dataSource={
           readPretty ? readPrettyDataSource : orderedFilteredDataSource
         }

@@ -9,7 +9,7 @@ import {
 import { markRaw, model } from '@formily/reactive'
 import { Badge, Tabs } from 'antd'
 import { TabPaneProps, TabsProps } from 'antd/lib/tabs'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { Fragment, useMemo } from 'react'
 import { usePrefixCls } from '../__builtins__'
 export interface IFormTab {
@@ -97,7 +97,7 @@ export const FormTab: ComposedFormTab = observer(
     return (
       <Tabs
         {...props}
-        className={cls(prefixCls, props.className)}
+        className={clsx(prefixCls, props.className)}
         activeKey={activeKey}
         onChange={(key) => {
           props.onChange?.(key)

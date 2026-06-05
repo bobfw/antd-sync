@@ -1,7 +1,6 @@
-import { CSSProperties } from 'react'
+import type { CSSInterpolation, CSSObject } from '@ant-design/cssinjs'
 import { GenerateStyle } from '../../__builtins__'
-
-export const genOtherStyle: GenerateStyle = (token) => {
+export const genOtherStyle: GenerateStyle = (token): CSSInterpolation => {
   const {
     componentCls,
     colorError,
@@ -27,7 +26,7 @@ export const genOtherStyle: GenerateStyle = (token) => {
     paddingXS,
   } = token
 
-  const hover = (color = colorPrimaryBorderHover): CSSProperties => ({
+  const hover = (color = colorPrimaryBorderHover): CSSObject => ({
     borderColor: color,
     borderInlineEndWidth: lineWidth,
   })
@@ -35,7 +34,7 @@ export const genOtherStyle: GenerateStyle = (token) => {
   const active = (
     color = colorPrimary,
     outlineColor = controlOutline
-  ): CSSProperties => ({
+  ): CSSObject => ({
     borderColor: color,
     borderInlineEndWidth: lineWidth,
     outline: 0,

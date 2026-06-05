@@ -14,7 +14,7 @@ import type {
 import { Space, Tag } from 'antd'
 import type { DefaultOptionType } from 'antd/lib/cascader'
 import type { RangePickerProps as DateRangePickerProps } from 'antd/lib/date-picker'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { createContext, useContext } from 'react'
 import { formatDayjsValue, usePrefixCls } from '../__builtins__'
 import useStyle from './style'
@@ -34,7 +34,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = observer(
     const [wrapSSR, hashId] = useStyle(prefixCls)
     return wrapSSR(
       <Space
-        className={cls(prefixCls, hashId, props.className)}
+        className={clsx(prefixCls, hashId, props.className)}
         style={props.style}
       >
         {props.addonBefore}
@@ -53,7 +53,7 @@ const NumberPicker: React.FC<React.PropsWithChildren<InputNumberProps>> =
     const [wrapSSR, hashId] = useStyle(prefixCls)
     return wrapSSR(
       <Space
-        className={cls(prefixCls, hashId, props.className)}
+        className={clsx(prefixCls, hashId, props.className)}
         style={props.style}
       >
         {props.addonBefore}
@@ -125,7 +125,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps<any>>> = observer(
     }
     return wrapSSR(
       <div
-        className={cls(prefixCls, hashId, props.className)}
+        className={clsx(prefixCls, hashId, props.className)}
         style={props.style}
       >
         {getLabels()}
@@ -196,7 +196,7 @@ const TreeSelect: React.FC<React.PropsWithChildren<TreeSelectProps<any>>> =
     }
     return wrapSSR(
       <div
-        className={cls(prefixCls, hashId, props.className)}
+        className={clsx(prefixCls, hashId, props.className)}
         style={props.style}
       >
         {getLabels()}
@@ -256,7 +256,7 @@ const Cascader: React.FC<React.PropsWithChildren<CascaderProps<any>>> =
     }
     return wrapSSR(
       <div
-        className={cls(prefixCls, hashId, props.className)}
+        className={clsx(prefixCls, hashId, props.className)}
         style={props.style}
       >
         {getLabels()}
@@ -273,7 +273,7 @@ const DatePicker: React.FC<React.PropsWithChildren<DatePickerProps>> = (
     const labels = formatDayjsValue(props.value, props.format, placeholder)
     return isArr(labels) ? labels.join('~') : labels
   }
-  return <div className={cls(prefixCls, props.className)}>{getLabels()}</div>
+  return <div className={clsx(prefixCls, props.className)}>{getLabels()}</div>
 }
 
 const DateRangePicker: React.FC<
@@ -286,7 +286,7 @@ const DateRangePicker: React.FC<
     return isArr(labels) ? labels.join('~') : labels
   }
   return (
-    <div className={cls(prefixCls, props.className)} style={props.style}>
+    <div className={clsx(prefixCls, props.className)} style={props.style}>
       {getLabels()}
     </div>
   )
@@ -300,7 +300,7 @@ const TimePicker: ReactFC<TimePickerProps> = (props) => {
     return isArr(labels) ? labels.join('~') : labels
   }
   return (
-    <div className={cls(prefixCls, props.className)} style={props.style}>
+    <div className={clsx(prefixCls, props.className)} style={props.style}>
       {getLabels()}
     </div>
   )
@@ -316,7 +316,7 @@ const TimeRangePicker: React.FC<
     return isArr(labels) ? labels.join('~') : labels
   }
   return (
-    <div className={cls(prefixCls, props.className)} style={props.style}>
+    <div className={clsx(prefixCls, props.className)} style={props.style}>
       {getLabels()}
     </div>
   )
@@ -333,7 +333,7 @@ const InternalPreviewText: ReactFC<IPreviewTextProps> = observer(
     const prefixCls = usePrefixCls('form-text', props)
 
     return (
-      <div className={cls(prefixCls, props.className)} style={props.style}>
+      <div className={clsx(prefixCls, props.className)} style={props.style}>
         {usePlaceholder(props.value)}
       </div>
     )

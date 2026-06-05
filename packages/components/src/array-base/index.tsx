@@ -17,7 +17,7 @@ import {
 } from '@formily/react'
 import { clone, isUndef, isValid } from '@formily/shared'
 import { Button, ButtonProps } from 'antd'
-import cls from 'classnames'
+import clsx from 'clsx'
 import React, { createContext, forwardRef, useContext } from 'react'
 import { SortableHandle, usePrefixCls } from '../__builtins__'
 import useStyle from './style'
@@ -39,9 +39,11 @@ export interface IArrayBaseItemProps {
   record: ((index: number) => Record<string, any>) | Record<string, any>
 }
 
-type CommonProps = ButtonProps & {
+type CommonProps = Omit<ButtonProps, 'ref'> & {
   index?: number
 }
+
+type ButtonRef = HTMLAnchorElement | HTMLButtonElement
 
 export type ArrayBaseMixins = {
   Addition: ReactFC<IArrayBaseAdditionProps>
@@ -135,7 +137,7 @@ const InternalSortHandle = SortableHandle((props) => {
   return wrapSSR(
     <MenuOutlined
       {...props}
-      className={cls(`${prefixCls}-sort-handle`, hashId, props.className)}
+      className={clsx(`${prefixCls}-sort-handle`, hashId, props.className)}
       style={{ ...props.style }}
     />
   )
@@ -153,7 +155,7 @@ const Index: React.FC<React.HTMLAttributes<HTMLSpanElement>> = (props) => {
   const prefixCls = usePrefixCls('formily-array-base')
   const [wrapSSR, hashId] = useStyle(prefixCls)
   return wrapSSR(
-    <span {...props} className={cls(`${prefixCls}-index`, hashId)}>
+    <span {...props} className={clsx(`${prefixCls}-index`, hashId)}>
       #{(index || 0) + 1}.
     </span>
   )
@@ -176,7 +178,7 @@ const Addition: ReactFC<IArrayBaseAdditionProps> = (props) => {
       block
       {...props}
       disabled={self?.disabled}
-      className={cls(`${prefixCls}-addition`, hashId, props.className)}
+      className={clsx(`${prefixCls}-addition`, hashId, props.className)}
       onClick={(e) => {
         if (array.props?.disabled) return
         const defaultValue = getDefaultValue(props.defaultValue, array.schema)
@@ -207,16 +209,17 @@ const Copy = forwardRef<HTMLButtonElement, CommonProps>((props, ref) => {
   if (array.field?.pattern !== 'editable') return null
   return wrapSSR(
     <Button
-      type="ghost"
+      type="text"
+      ghost
       {...props}
       style={{
-        padding: '0 0 0 6px',
+        padding: '0 3px',
         width: 'auto',
         height: 'auto',
         ...props.style,
       }}
       disabled={self?.disabled}
-      className={cls(
+      className={clsx(
         `${prefixCls}-copy`,
         hashId,
         self?.disabled ? `${prefixCls}-copy-disabled` : '',
@@ -243,7 +246,7 @@ const Copy = forwardRef<HTMLButtonElement, CommonProps>((props, ref) => {
   )
 })
 
-const Remove = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
+const Remove = forwardRef<ButtonRef, CommonProps>((props, ref) => {
   const index = useIndex(props.index)
   const self = useField()
   const array = useArray()
@@ -254,16 +257,16 @@ const Remove = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
   if (array.field?.pattern !== 'editable') return null
   return wrapSSR(
     <Button
-      type="ghost"
+      type="text"
       {...props}
       style={{
-        padding: '0 0 0 6px',
+        padding: '0 3px',
         width: 'auto',
         height: 'auto',
         ...props.style,
       }}
       disabled={self?.disabled}
-      className={cls(
+      className={clsx(
         `${prefixCls}-remove`,
         hashId,
         self?.disabled ? `${prefixCls}-remove-disabled` : '',
@@ -287,7 +290,7 @@ const Remove = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
   )
 })
 
-const MoveDown = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
+const MoveDown = forwardRef<ButtonRef, CommonProps>((props, ref) => {
   const index = useIndex(props.index)
   const self = useField()
   const array = useArray()
@@ -296,16 +299,16 @@ const MoveDown = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
   if (array.field?.pattern !== 'editable') return null
   return (
     <Button
-      type="ghost"
+      type="text"
       {...props}
       style={{
-        padding: '0 0 0 6px',
+        padding: '0 3px',
         width: 'auto',
         height: 'auto',
         ...props.style,
       }}
       disabled={self?.disabled}
-      className={cls(
+      className={clsx(
         `${prefixCls}-move-down`,
         self?.disabled ? `${prefixCls}-move-down-disabled` : '',
         props.className
@@ -328,7 +331,7 @@ const MoveDown = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
   )
 })
 
-const MoveUp = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
+const MoveUp = forwardRef<ButtonRef, CommonProps>((props, ref) => {
   const index = useIndex(props.index)
   const self = useField()
   const array = useArray()
@@ -337,16 +340,16 @@ const MoveUp = forwardRef<HTMLSpanElement, CommonProps>((props, ref) => {
   if (array.field?.pattern !== 'editable') return null
   return (
     <Button
-      type="ghost"
+      type="text"
       {...props}
       style={{
-        padding: '0 0 0 6px',
+        padding: '0 3px',
         width: 'auto',
         height: 'auto',
         ...props.style,
       }}
       disabled={self?.disabled}
-      className={cls(
+      className={clsx(
         `${prefixCls}-move-up`,
         self?.disabled ? `${prefixCls}-move-up-disabled` : '',
         props.className

@@ -1,12 +1,12 @@
-import React from 'react'
 import {
-  NumberPicker,
-  FormItem,
   FormButtonGroup,
+  FormItem,
+  NumberPicker,
   Submit,
-} from '@formily/antd-v5'
+} from '@formily/antd-sync'
 import { createForm } from '@formily/core'
-import { FormProvider, Field } from '@formily/react'
+import { Field, FormProvider } from '@formily/react'
+import React from 'react'
 
 const form = createForm()
 const Demo: React.FC = () => {
