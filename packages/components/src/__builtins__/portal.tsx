@@ -21,7 +21,7 @@ export const createPortalProvider = (id: string | symbol) => {
         {props.children}
         <Observer>
           {() => {
-            if (portalId!) return <></>
+            if (!portalId) return <></>
             const portal = PortalMap.get(portalId)
             if (portal) return createPortal(portal, document.body)
             return <></>
