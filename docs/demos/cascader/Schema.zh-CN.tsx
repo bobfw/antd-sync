@@ -1,7 +1,7 @@
-import { Cascader, FormButtonGroup, FormItem, Submit } from '@formily/antd-sync'
 import { createForm, Field, FieldDataSource } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import { action } from '@formily/reactive'
+import { Cascader, FormButtonGroup, FormItem, Submit } from 'formily-antd-sync'
 import React from 'react'
 
 const SchemaField = createSchemaField({

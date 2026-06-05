@@ -1,3 +1,5 @@
+import { createForm } from '@formily/core'
+import { createSchemaField, FormProvider, observer } from '@formily/react'
 import {
   DatePicker,
   Form,
@@ -8,9 +10,7 @@ import {
   Reset,
   Select,
   Submit,
-} from '@formily/antd-sync'
-import { createForm } from '@formily/core'
-import { createSchemaField, FormProvider, observer } from '@formily/react'
+} from 'formily-antd-sync'
 import React, { Fragment, useMemo } from 'react'
 
 const useCollapseGrid = (maxRows: number) => {

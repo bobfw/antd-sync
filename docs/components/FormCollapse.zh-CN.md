@@ -15,7 +15,7 @@ import {
   Input,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-sync'
+} from 'formily-antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { Button } from 'antd'
@@ -120,7 +120,7 @@ import {
   Input,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-sync'
+} from 'formily-antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { Button } from 'antd'

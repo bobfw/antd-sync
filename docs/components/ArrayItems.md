@@ -18,7 +18,7 @@ import {
   FormButtonGroup,
   Submit,
   Space,
-} from '@formily/antd-sync'
+} from 'formily-antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 
@@ -207,7 +207,7 @@ import {
   FormButtonGroup,
   Submit,
   Space,
-} from '@formily/antd-sync'
+} from 'formily-antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 
@@ -437,7 +437,7 @@ import {
   FormButtonGroup,
   Submit,
   Space,
-} from '@formily/antd-sync'
+} from 'formily-antd-sync'
 import { createForm, onFieldChange, onFieldReact } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 
@@ -569,7 +569,7 @@ import {
   FormButtonGroup,
   Submit,
   Space,
-} from '@formily/antd-sync'
+} from 'formily-antd-sync'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 

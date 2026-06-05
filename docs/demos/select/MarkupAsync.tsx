@@ -1,4 +1,3 @@
-import { FormButtonGroup, FormItem, Select, Submit } from '@formily/antd-sync'
 import {
   createForm,
   Field,
@@ -9,6 +8,7 @@ import {
 } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import { action, observable } from '@formily/reactive'
+import { FormButtonGroup, FormItem, Select, Submit } from 'formily-antd-sync'
 import { fetch } from 'mfetch'
 import React from 'react'
 

@@ -1,11 +1,11 @@
+import { createForm } from '@formily/core'
+import { createSchemaField, FormProvider } from '@formily/react'
 import {
   FormButtonGroup,
   FormItem,
   NumberPicker,
   Submit,
-} from '@formily/antd-sync'
-import { createForm } from '@formily/core'
-import { createSchemaField, FormProvider } from '@formily/react'
+} from 'formily-antd-sync'
 import React from 'react'
 
 const SchemaField = createSchemaField({

@@ -1,3 +1,5 @@
+import { createForm } from '@formily/core'
+import { Field, FormProvider, VoidField } from '@formily/react'
 import {
   FormButtonGroup,
   FormItem,
@@ -5,9 +7,7 @@ import {
   Input,
   Space,
   Submit,
-} from '@formily/antd-sync'
-import { createForm } from '@formily/core'
-import { Field, FormProvider, VoidField } from '@formily/react'
+} from 'formily-antd-sync'
 import React from 'react'
 
 const form = createForm()

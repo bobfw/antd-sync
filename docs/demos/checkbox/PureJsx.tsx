@@ -1,4 +1,3 @@
-import { Checkbox, FormButtonGroup, FormItem, Submit } from '@formily/antd-sync'
 import {
   createForm,
   Field as FieldType,
@@ -8,6 +7,7 @@ import {
 } from '@formily/core'
 import { Field, FormProvider } from '@formily/react'
 import { action } from '@formily/reactive'
+import { Checkbox, FormButtonGroup, FormItem, Submit } from 'formily-antd-sync'
 import React from 'react'
 
 interface AddressInfo {

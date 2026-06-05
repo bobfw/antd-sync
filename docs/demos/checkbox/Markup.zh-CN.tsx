@@ -1,6 +1,6 @@
-import { Checkbox, FormButtonGroup, FormItem, Submit } from '@formily/antd-sync'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
+import { Checkbox, FormButtonGroup, FormItem, Submit } from 'formily-antd-sync'
 import React from 'react'
 
 const SchemaField = createSchemaField({

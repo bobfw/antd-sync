@@ -3,12 +3,11 @@
 > **Note:** The original [@formily/antd](https://github.com/formilyjs/antd) is no longer maintained. This fork keeps pace with antd's active releases — hence the name `sync`. Currently tracking **antd v6**.  
 > **Install:** `pnpm install formily-antd-sync`
 >
-> Migrating from `@formily/antd` or `@formily/antd-v5`? Add this to your `pnpm-workspace.yaml` and no import changes needed:
+> Migrating from `@formily/antd` or `@formily/antd-v5`? Add this to your `package.json` and no import changes needed:
 >
-> ```yaml
-> overrides:
->   '@formily/antd': 'npm:formily-antd-sync@*'
->   '@formily/antd-v5': 'npm:formily-antd-sync@*'
+> ```json
+> "@formily/antd": "npm:formily-antd-sync@^0.0.1",
+> "@formily/antd-v5": "npm:formily-antd-sync@^0.0.1"
 > ```
 
 English | [简体中文](./README.zh-CN.md)

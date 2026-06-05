@@ -1,7 +1,7 @@
-import { FormButtonGroup, FormItem, Submit, Transfer } from '@formily/antd-sync'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider, ISchema } from '@formily/react'
 import type { TransferItem } from 'antd/es/transfer'
+import { FormButtonGroup, FormItem, Submit, Transfer } from 'formily-antd-sync'
 import React from 'react'
 
 const SchemaField = createSchemaField({
