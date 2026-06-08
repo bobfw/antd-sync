@@ -57,7 +57,9 @@ export interface IFormDrawer {
 }
 
 export interface IDrawerProps extends DrawerProps {
-  onClose?: (e: EventType) => void | boolean
+  onClose?: (
+    e: Parameters<NonNullable<DrawerProps['onClose']>>[0]
+  ) => void | boolean
   loadingText?: React.ReactNode
 }
 interface IEnv {

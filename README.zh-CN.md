@@ -1,11 +1,10 @@
 > **注意：** 原 [@formily/antd](https://github.com/formilyjs/antd) 已不再维护。本仓库紧随 antd 活跃版本迭代，故名 `sync`。当前同步 **antd v6**。  
 > **安装：** `pnpm install formily-antd-sync`
 >
-> 从 `@formily/antd` 或 `@formily/antd-v5` 迁移？在 `package.json` 中加入以下配置，无需修改任何 import：
+> 从 `@formily/antd-v5` 迁移？在 `package.json` 中加入以下配置，无需修改任何 import：
 >
 > ```json
-> "@formily/antd": "npm:formily-antd-sync@^0.0.1",
-> "@formily/antd-v5": "npm:formily-antd-sync@^0.0.1"
+> "@formily/antd-v5": "npm:formily-antd-sync@latest"
 > ```
 
 [English](./README.md) | 简体中文

@@ -56,11 +56,11 @@ export function SortableContainer<T extends React.HTMLAttributes<HTMLElement>>(
   }
 }
 
-export const useSortableItem = () => {
+const useSortableItem = () => {
   return useContext(SortableItemContext)
 }
 
-export const SortableItemContext = createContext<
+const SortableItemContext = createContext<
   Partial<ReturnType<typeof useSortable>>
 >({})
 

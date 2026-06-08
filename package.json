@@ -82,7 +82,6 @@
     "lerna": "^6.0.0",
     "lint-staged": "^15.2.0",
     "mfetch": "^0.2.27",
-    "moment": "^2.29.4",
     "prettier": "^2.2.1",
     "pretty-format": "^29.3.1",
     "pretty-quick": "^4.0.0",

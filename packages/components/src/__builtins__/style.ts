@@ -1,8 +1,9 @@
 import type { CSSInterpolation, CSSObject } from '@ant-design/cssinjs'
 import { useStyleRegister } from '@ant-design/cssinjs'
 import { merge } from '@formily/shared'
+import { theme as AntdTheme } from 'antd'
 import type { ComponentTokenMap, GlobalToken } from 'antd/es/theme/interface'
-import { useConfig, useToken } from './hooks'
+import { useConfig } from './hooks'
 
 export type OverrideComponent = keyof ComponentTokenMap | (string & {})
 
@@ -70,7 +71,7 @@ export const genStyleHook = <ComponentName extends OverrideComponent>(
   ) => CSSInterpolation
 ) => {
   return (prefixCls: string): UseComponentStyleResult => {
-    const { theme, token, hashId } = useToken()
+    const { theme, token, hashId } = AntdTheme.useToken()
     const { getPrefixCls, iconPrefixCls, csp } = useConfig()
     const rootPrefixCls = getPrefixCls()
     useStyleRegister(
