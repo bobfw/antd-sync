@@ -1,6 +1,6 @@
 {
   "name": "formily-antd-sync",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/faner11/antd-sync#readme",
   "bugs": {
     "url": "https://github.com/faner11/antd-sync/issues"
@@ -11,22 +11,27 @@
   },
   "license": "MIT",
   "sideEffects": [
-    "dist/*.js",
-    "dist/*.mjs",
+    "esm/*.js",
+    "esm/*.mjs",
+    "lib/*.js",
     "src/*.ts",
     "*.less",
     "*.scss",
     "**/*/style.js"
   ],
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": {
+      "import": "./esm/index.mjs",
+      "require": "./lib/index.js",
+      "types": "./esm/index.d.ts"
+    },
     "./package.json": "./package.json"
   },
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.mts",
+  "main": "lib/index.js",
+  "module": "esm/index.mjs",
+  "types": "esm/index.d.ts",
   "scripts": {
-    "build": "tsdown"
+    "build": "tsdown && tsc --project tsconfig.build.json"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.0.0",

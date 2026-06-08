@@ -13,8 +13,6 @@ builder.config.ts
 .umi
 src
 
-esm
-lib
-
-# Ensure dist is published (root .gitignore may exclude it)
-!dist
+# Override root .gitignore to ensure esm and lib are published
+!esm
+!lib

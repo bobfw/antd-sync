@@ -49,7 +49,7 @@ const calcFactor = <T>(value: T | T[], breakpointIndex?: number): T => {
 }
 
 const factor = <T>(value: T | T[], breakpointIndex?: number): T =>
-  isValid(value) ? calcFactor(value as any, breakpointIndex) : value
+  isValid(value) ? calcFactor(value as any, breakpointIndex) : (value as T)
 
 const calculateProps: ICalculateProps = (target, props) => {
   const { clientWidth } = target

@@ -10,8 +10,8 @@ import { SpaceProps } from 'antd/lib/space'
 import clsx from 'clsx'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import StickyBox from 'react-sticky-box'
-import { BaseItem, IFormItemProps } from '../form-item'
 import { usePrefixCls } from '../__builtins__'
+import { BaseItem, IFormItemProps } from '../form-item'
 import useStyle from './style'
 
 interface IStickyProps extends React.ComponentProps<typeof StickyBox> {
@@ -107,7 +107,15 @@ FormButtonGroup.FormItem = ({ gutter, ...props }) => {
   )
 }
 
-FormButtonGroup.Sticky = ({ align = 'left', ...props }) => {
+FormButtonGroup.Sticky = ({
+  align = 'left',
+  ...props
+}: {
+  align?: string
+  className?: string
+  style?: React.CSSProperties
+  children?: React.ReactNode
+}) => {
   const ref = useRef(null)
   const [color, setColor] = useState('transparent')
   const prefixCls = usePrefixCls('formily-button-group')
