@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
+import { InboxOutlined, UploadOutlined } from '@ant-design/icons'
 import { Field } from '@formily/core'
 import { connect, mapProps, useField } from '@formily/react'
+import { reaction } from '@formily/reactive'
+import { isArr, toArr } from '@formily/shared'
 import { Upload as AntdUpload, Button } from 'antd'
 import {
-  UploadChangeParam,
-  UploadProps as AntdUploadProps,
   DraggerProps as AntdDraggerProps,
-} from 'antd/lib/upload'
-import { InboxOutlined, UploadOutlined } from '@ant-design/icons'
-import { reaction } from '@formily/reactive'
+  UploadProps as AntdUploadProps,
+  UploadChangeParam,
+} from 'antd/es/upload'
 import { UploadFile } from 'antd/lib/upload/interface'
-import { isArr, toArr } from '@formily/shared'
-import { UPLOAD_PLACEHOLDER } from './placeholder'
+import React, { useEffect } from 'react'
 import { usePrefixCls } from '../__builtins__'
+import { UPLOAD_PLACEHOLDER } from './placeholder'
 
 export type IUploadProps = Omit<AntdUploadProps, 'onChange'> & {
   textContent?: React.ReactNode
