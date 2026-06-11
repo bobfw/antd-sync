@@ -1,13 +1,13 @@
 {
   "name": "formily-antd-sync",
   "version": "0.0.7",
-  "homepage": "https://github.com/faner11/antd-sync#readme",
+  "homepage": "https://github.com/bobfw/antd-sync#readme",
   "bugs": {
-    "url": "https://github.com/faner11/antd-sync/issues"
+    "url": "https://github.com/bobfw/antd-sync/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faner11/antd-sync.git"
+    "url": "git+https://github.com/bobfw/antd-sync.git"
   },
   "license": "MIT",
   "sideEffects": [
